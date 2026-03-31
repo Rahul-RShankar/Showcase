@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novacore | Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function openIdea(id){
+      document.querySelectorAll('.idea-detail').forEach(el=>el.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+    function showHome(){
+      document.querySelectorAll('.idea-detail').forEach(el=>el.classList.add('hidden'));
+      document.getElementById('home').classList.remove('hidden');
+    }
+    function togglePitch(){
+      document.body.classList.toggle('bg-white');
+      document.body.classList.toggle('text-black');
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+<header class="p-6 border-b border-gray-800 flex justify-between items-center">
+  <h1 class="text-2xl font-bold cursor-pointer" onclick="showHome()">Novacore</h1>
+  <div class="flex gap-4">
+    <button onclick="togglePitch()" class="text-sm text-gray-400">Investor Mode</button>
+    <button class="text-sm text-gray-400">Login</button>
+  </div>
+</header>
+
+<!-- HOME -->
+<div id="home">
+  <section class="text-center py-16 px-6">
+    <h2 class="text-4xl font-bold mb-4">Novacore Ecosystem</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto">AI systems, marketplaces, and future infrastructure.</p>
+  </section>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-16">
+
+    <div onclick="openIdea('hourstay')" class="cursor-pointer bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-semibold">HourStay</h3>
+      <p class="text-gray-400">Hourly hotel booking</p>
+    </div>
+
+    <div onclick="openIdea('ai')" class="cursor-pointer bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-semibold">AI Systems</h3>
+      <p class="text-gray-400">Automation & content engines</p>
+    </div>
+
+    <div onclick="openIdea('trust')" class="cursor-pointer bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-semibold">Trust Infra</h3>
+      <p class="text-gray-400">Verification systems</p>
+    </div>
+
+    <div onclick="openIdea('aeon')" class="cursor-pointer bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-semibold">AeonSpace</h3>
+      <p class="text-gray-400">Virtual civilization world</p>
+    </div>
+
+  </section>
+</div>
+
+<!-- IDEA DETAIL PAGES -->
+
+<div id="hourstay" class="idea-detail hidden p-10">
+  <button onclick="showHome()" class="mb-4 text-blue-400">← Back</button>
+  <h2 class="text-3xl font-bold mb-4">HourStay</h2>
+  <p>Marketplace for booking hotels hourly. Focused on flexibility, affordability, and urban demand.</p>
+</div>
+
+<div id="ai" class="idea-detail hidden p-10">
+  <button onclick="showHome()" class="mb-4 text-blue-400">← Back</button>
+  <h2 class="text-3xl font-bold mb-4">AI Systems</h2>
+  <p>AI-powered automation tools for content, lead generation, and business workflows.</p>
+</div>
+
+<div id="trust" class="idea-detail hidden p-10">
+  <button onclick="showHome()" class="mb-4 text-blue-400">← Back</button>
+  <h2 class="text-3xl font-bold mb-4">Trust Infrastructure</h2>
+  <p>Cryptographic verification layer for authenticity and anti-misinformation systems.</p>
+</div>
+
+<div id="aeon" class="idea-detail hidden p-10">
+  <button onclick="showHome()" class="mb-4 text-blue-400">← Back</button>
+  <h2 class="text-3xl font-bold mb-4">AeonSpace</h2>
+  <p>VR ecosystem where players build civilizations and evolve systems.</p>
+</div>
+
+<!-- FUTURE DASHBOARD PLACEHOLDER -->
+<div class="hidden" id="dashboard">
+  <h2 class="text-2xl font-bold">Dashboard (Coming Soon)</h2>
+</div>
+
+<footer class="text-center text-gray-500 py-6 border-t border-gray-800">
+  © 2026 Novacore
+</footer>
+
+</body>
+</html>
